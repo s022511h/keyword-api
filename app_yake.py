@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, send_from_directory, jsonify, request
 from flask_cors import CORS
 import openai
 from pymongo import MongoClient
@@ -177,12 +177,9 @@ def user_feedback():
         return jsonify({"error": str(e)}), 500
     
 @app.route('/')
-def index():
-    return app.send_static_file('index.html')
-
 @app.route('/<path:path>')
-def serve_static_files(path):
-    return app.send_static_file(path)
+def serve_react_app(path='index.html'):
+    return send_from_directory(app.static_folder, path)
 
 
 if __name__ == '__main__':
