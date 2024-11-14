@@ -7,7 +7,7 @@ import config
 import re
 from datetime import datetime
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='build', static_url_path='')
 CORS(app)
 
 # Load configuration from environment variables
@@ -158,6 +158,15 @@ def user_feedback():
     except Exception as e:
         print(f"Error in /feedback route: {e}")
         return jsonify({"error": str(e)}), 500
+    
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
+
+@app.route('/<path:path>')
+def serve_static_files(path):
+    return app.send_static_file(path)
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
