@@ -99,7 +99,6 @@ def has_previous_optimization(text):
         print(f"Error checking for previous optimizations: {e}")
         return False
 
-# Updated SEO scoring functions
 def calculate_target_seo_score(text, keywords):
     word_count = len(text.split())
     avg_target_density = 3.5
