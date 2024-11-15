@@ -2,6 +2,7 @@ from flask import Flask, send_from_directory, jsonify, request
 from flask_cors import CORS
 import openai
 from pymongo import MongoClient
+import os
 import config
 import re
 from datetime import datetime
@@ -12,12 +13,15 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 openai.api_key = config.OPENAI_API_KEY
 openai.temperature = 0.4
 
-mongo_client = MongoClient('mongodb://localhost:27017/')
+mongo_client = MongoClient(os.getenv('MONGODB_URI'))
 db = mongo_client['KeywordDB']
 primary_keywords_collection = db['Primary']
 secondary_keywords_collection = db['Secondary']
 long_tail_keywords_collection = db['Long-Tail']
 optimization_log_collection = db['OptimizationLogs']
+
+# Test query
+print(db.list_collection_names())  # Should list your collections
 
 def fetch_keywords_from_db():
     try:
