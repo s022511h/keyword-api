@@ -7,7 +7,7 @@ import re
 from datetime import datetime
 
 app = Flask(__name__, static_folder='build', static_url_path='')
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 openai.api_key = config.OPENAI_API_KEY
 openai.temperature = 0.4
