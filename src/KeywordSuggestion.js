@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
+const API_BASE_URL =
+process.env.REACT_APP_API_BASE_URL || 'https://afternoon-thicket-53273-c58812e2a86f.herokuapp.com' ||
+'http://localhost:5000';
+
 const KeywordSuggestion = () => {
   const [content, setContent] = useState('');
   const [optimizedContent, setOptimizedContent] = useState('');
@@ -30,7 +34,7 @@ const KeywordSuggestion = () => {
 
   const fetchKeywords = async () => {
     try {
-      const response = await fetch('http://localhost:5000/optimize', {
+      const response = await fetch(`${API_BASE_URL}/optimize`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
