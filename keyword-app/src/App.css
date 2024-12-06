@@ -1,0 +1,184 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 80px;
+  margin-right: 15px;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #fff;
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: black;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.textarea {
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #C4FF36;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #011027;
+  color: white;
+}
+
+.optimizedContentBox {
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 16px;
+  white-space: pre-wrap;
+}
+
+.seoText {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.keywordButton {
+  margin: 5px;
+  padding: 8px 12px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.guideButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #C4FF36;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.guideButton:hover {
+  background-color: #011027;
+  color: rgb(255, 255, 255);
+}
+
+.guideModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.guideContent {
+  background-color: white;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  font-size: 16px;
+  color: #333;
+}
+
+.guideContent h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.guideContent ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.guideContent li {
+  margin-bottom: 10px;
+}
+
+.closeButton {
+  background-color: #C4FF36;
+  color: black;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.closeButton:hover {
+  background-color: #011027;
+  color: rgb(255, 255, 255);
+}
+
+button {
+  background-color: #C4FF36;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #a8ff2e;
+}
