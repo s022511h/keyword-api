@@ -9,7 +9,12 @@ function App() {
       <header className="App-header">
         <img src={Logo} className="App-logo" alt="Staffordshire University Logo" />
       </header>
-      <KeywordSuggestion />
+      <div className="container">
+        <KeywordSuggestion />
+        <button className="guideButton">
+          Guide
+        </button>
+      </div>
     </div>
   );
 }
