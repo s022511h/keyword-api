@@ -21,7 +21,7 @@ long_tail_keywords_collection = db['Long-Tail']
 optimization_log_collection = db['OptimizationLogs']
 
 # Test query
-print(db.list_collection_names())  # Should list your collections
+print(db.list_collection_names()) 
 
 def fetch_keywords_from_db():
     try:

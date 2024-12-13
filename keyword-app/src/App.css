@@ -30,35 +30,39 @@
   min-height: 100vh;
   background-color: #f5f5f5;
   padding: 20px;
+  width: 100%;
 }
 
 .title {
-  font-size: 24px;
+  font-size: 28px;
   margin-bottom: 20px;
 }
 
 .subtitle {
-  font-size: 18px;
+  font-size: 22px;
   margin-top: 20px;
 }
 
 .textarea {
-  width: 80%;
-  padding: 10px;
+  width: calc(100% - 20px); 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 20px; 
   border-radius: 5px;
   border: 1px solid #ccc;
-  font-size: 16px;
-  margin-bottom: 20px;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box; 
 }
 
 .button {
-  padding: 10px 20px;
+  padding: 15px 25px;
   background-color: #C4FF36;
   color: black;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .button:hover {
@@ -67,24 +71,29 @@
 }
 
 .optimizedContentBox {
-  width: 80%;
-  padding: 10px;
+  width: calc(100% - 20px); 
+  max-width: 1200px; 
+  margin: 20px auto; 
+  padding: 20px;
   border-radius: 5px;
   border: 1px solid #ccc;
   background-color: #fff;
-  font-size: 16px;
+  font-size: 20px;
   white-space: pre-wrap;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box; 
 }
 
 .seoText {
-  font-size: 16px;
+  font-size: 20px;
   color: #333;
   margin-top: 10px;
+  font-family: Arial, sans-serif;
 }
 
 .keywordButton {
   margin: 5px;
-  padding: 8px 12px;
+  padding: 12px 18px;
   background-color: #2196F3;
   color: white;
   border: none;
@@ -92,22 +101,27 @@
   cursor: pointer;
 }
 
+.keywordButton:hover {
+  background-color: #32CD32;
+  color: black;
+}
+
 .guideButton {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+  margin-top: 20px;
   background-color: #C4FF36;
   color: black;
   border: none;
   border-radius: 5px;
-  padding: 10px 15px;
-  font-size: 14px;
+  padding: 20px 30px;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
   cursor: pointer;
+  align-self: center;
 }
 
 .guideButton:hover {
   background-color: #011027;
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
 .guideModal {
@@ -126,18 +140,20 @@
 .guideContent {
   background-color: white;
   padding: 20px;
-  width: 80%;
-  max-width: 500px;
+  width: calc(100% - 20px); 
+  max-width: 800px; 
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: left;
-  font-size: 16px;
+  font-size: 20px;
   color: #333;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .guideContent h2 {
   margin-top: 0;
-  font-size: 20px;
+  font-size: 24px;
   color: #333;
 }
 
@@ -154,29 +170,26 @@
   background-color: #C4FF36;
   color: black;
   border: none;
-  padding: 8px 12px;
+  padding: 12px 18px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 18px;
   margin-top: 20px;
-  display: block;
-  width: 100%;
-  text-align: center;
 }
 
 .closeButton:hover {
   background-color: #011027;
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
 button {
   background-color: #C4FF36;
   color: black;
-  padding: 10px 20px;
+  padding: 15px 25px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 button:hover {

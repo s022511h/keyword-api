@@ -7,17 +7,14 @@ import config
 app = Flask(__name__)
 CORS(app)
 
-# Set OpenAI API key from config.py
 openai.api_key = config.OPENAI_API_KEY
 
-# MongoDB client
 client = MongoClient('mongodb://localhost:27017/')
 db = client['KeywordDB']
 primary_keywords_collection = db['Primary']
 secondary_keywords_collection = db['Secondary']
 long_tail_keywords_collection = db['Long-Tail']
 
-# Fetch keywords from MongoDB
 def fetch_keywords_from_db():
     try:
         primary_keywords = list(primary_keywords_collection.find().sort([('searchVolume', -1), ('seoDifficulty', 1)]).limit(5))
@@ -34,10 +31,9 @@ def fetch_keywords_from_db():
         print(f"Error fetching keywords from MongoDB: {e}")
         return []
 
-# Use GPT to insert MongoDB keywords into content contextually
 def insert_keywords_with_gpt(text, keywords):
     try:
-        # Build prompt for GPT to insert the keywords contextually
+
         prompt = (
             f"Rewrite the following text by inserting each of the following keywords naturally and meaningfully "
             f"into the text: {', '.join(keywords)}. Ensure the flow and marketing tone are maintained.\n\n"
@@ -55,14 +51,13 @@ def insert_keywords_with_gpt(text, keywords):
         )
         
         enhanced_text = response['choices'][0]['message']['content']
-        print(f"GPT-4 Response: {enhanced_text}")  # Log the response for debugging
+        print(f"GPT-4 Response: {enhanced_text}")
         return enhanced_text
     
     except Exception as e:
         print(f"Error during keyword insertion with GPT: {e}")
         return text
 
-# Highlight keywords in the text for better visibility in the frontend
 def highlight_keywords(optimized_text, keywords):
     for kw in keywords:
         optimized_text = optimized_text.replace(kw, f"<span style='color:red;'>{kw}</span>")
@@ -77,16 +72,13 @@ def optimize_content():
         if not text:
             return jsonify({"error": "No content provided"}), 400
 
-        # Fetch MongoDB keywords
         keywords = fetch_keywords_from_db()
 
         if not keywords:
             return jsonify({"error": "No keywords found"}), 500
 
-        # Insert MongoDB keywords using GPT-4
         optimized_text = insert_keywords_with_gpt(text, keywords)
         
-        # Highlight inserted keywords for frontend display
         optimized_text = highlight_keywords(optimized_text, keywords)
 
         return jsonify({

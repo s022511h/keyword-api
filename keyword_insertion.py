@@ -28,7 +28,6 @@ def rewrite_content(text, keywords):
 
     return optimized_text
 
-# Example usage
 text = """
 Across all walks of life, individuals are required to perform well in challenging circumstances. This experience can be stressful and may sometimes have a negative influence on wellbeing.
 """

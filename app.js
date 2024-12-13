@@ -1,7 +1,7 @@
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
-const cors = require('cors');  // 
-const fetch = require('node-fetch');  // Import fetch for making HTTP requests to Contensis API
+const cors = require('cors'); 
+const fetch = require('node-fetch');  
 
 const app = express();
 const port = 3000;
@@ -9,13 +9,11 @@ const port = 3000;
 const url = 'mongodb://localhost:27017';
 const dbName = 'KeywordDB';
 
-// Enable CORS for all routes
+
 app.use(cors());
 
-// Enable parsing of JSON requests
 app.use(express.json());
 
-// MongoDB endpoint to fetch keywords
 app.get('/keywords/:type', async (req, res) => {
   const type = req.params.type;
   const client = new MongoClient(url);
@@ -31,7 +29,6 @@ app.get('/keywords/:type', async (req, res) => {
   }
 });
 
-// New API endpoint to send optimized content to Contensis CMS
 app.post('/contensis/submit', async (req, res) => {
   const optimizedContent = req.body.optimizedContent;
 
@@ -40,7 +37,7 @@ app.post('/contensis/submit', async (req, res) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer your_token',  // Replace with actual token
+        'Authorization': 'Bearer your_token', 
       },
       body: JSON.stringify({
         content: optimizedContent,  
